@@ -37,7 +37,7 @@ public class Main {
     public static void enterStudentInformation(ArrayList<Student> studentList, Scanner scanner){
         System.out.print("Enter the number of students: ");
         int numStudents = scanner.nextInt();
-        scanner.nextLine(); // Consume the newline character
+        scanner.nextLine(); 
 
         for (int i = 0; i < numStudents; i++) {
             System.out.println("Enter details for student " + (i + 1) + ":");
