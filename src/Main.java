@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
         ArrayList<Student> studentList = new ArrayList<>();
@@ -33,11 +34,12 @@ public class Main {
                     break;
             }
         } while (choice != 4);
-        }
-    public static void enterStudentInformation(ArrayList<Student> studentList, Scanner scanner){
+    }
+
+    public static void enterStudentInformation(ArrayList<Student> studentList, Scanner scanner) {
         System.out.print("Enter the number of students: ");
         int numStudents = scanner.nextInt();
-        scanner.nextLine(); 
+        scanner.nextLine(); // Consume the newline character
 
         for (int i = 0; i < numStudents; i++) {
             System.out.println("Enter details for student " + (i + 1) + ":");
@@ -51,27 +53,29 @@ public class Main {
         }
         System.out.println("Student list updated successfully!");
     }
-    public static void findStudentByLastName(ArrayList<Student> studentList, Scanner scanner){
+
+    public static void findStudentByLastName(ArrayList<Student> studentList, Scanner scanner) {
         System.out.print("Enter last name to search: ");
         String search = scanner.nextLine();
 
         ArrayList<Student> foundStudent = new ArrayList<>();
 
-        for (Student student : studentList){
-            if (student.getLastName().equalsIgnoreCase(search)){
+        for (Student student : studentList) {
+            if (student.getLastName().equalsIgnoreCase(search)) {
                 foundStudent.add(student);
             }
         }
-        if (foundStudent.isEmpty()){
+        if (foundStudent.isEmpty()) {
             System.out.println("No student found with given last name.");
-        }else {
+        } else {
             System.out.println("Students with the last name " + search + ":");
-            for (Student student : foundStudent){
+            for (Student student : foundStudent) {
                 System.out.println(student.getFirstName() + " " + student.getLastName());
             }
         }
     }
-    public static void findAndEditStudentsByFullName(ArrayList<Student> studentList, Scanner scanner){
+
+    public static void findAndEditStudentsByFullName(ArrayList<Student> studentList, Scanner scanner) {
         System.out.print("Enter full name to search: ");
         String searchFull = scanner.nextLine();
 
@@ -103,6 +107,4 @@ public class Main {
             System.out.println("Student details updated successfully!");
         }
     }
-    }
-
-
+}
